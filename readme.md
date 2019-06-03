@@ -14,6 +14,10 @@ repositories {
         url 'https://dl.bintray.com/javakky/maven'
     }
 }
+
+dependencies{
+    compile group: 'com.github.javakky', name: 'jnr-load-dill', version: '1.0.1'
+}
 ```
 
 何かあれば、[@Javakky_P](https://twitter.com/Javakky_P)までお気軽に
