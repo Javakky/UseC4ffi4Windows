@@ -1,8 +1,34 @@
 plugins {
     id 'java'
+    id 'maven'
+    id "com.jfrog.bintray" version "1.8.4"
 }
 
-version '1.0-SNAPSHOT'
+version '1.0.1'
+group = 'com.github.javakky'
+archivesBaseName = 'jnr-load-dill'
+
+def libraryId = 'jnr-load-dill'
+def siteUrl = 'https://github.com/Javakky/UseC4ffi4Windows'
+def githubUrl = 'https://github.com/Javakky/UseC4ffi4Windows'
+
+bintray {
+    user = 'javakky'
+    key = project.property('bintray.key')
+    configurations = ['archives']
+
+    pkg {
+        repo = 'maven'
+        name = 'com.github.javakky.jnr-load-dill'
+        websiteUrl = siteUrl
+        vcsUrl = githubUrl + '.git'
+        issueTrackerUrl = githubUrl + '/issues'
+        publicDownloadNumbers = true
+        version {
+            name = project.version
+        }
+    }
+}
 
 sourceCompatibility = 1.8
 
@@ -15,4 +41,12 @@ dependencies {
     compile group: 'com.github.jnr', name: 'jnr-ffi', version: '2.1.9'
     compile group: 'org.ow2.asm', name: 'asm', version: '7.0'
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
+}
+
+task writeNewPom {
+    pom {
+        project {
+            inceptionYear '2019'
+        }.writeTo("./pom.xml")
+    }
 }
