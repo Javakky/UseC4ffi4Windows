@@ -17,8 +17,8 @@ public class LoadDll {
     private static final Set<String> setDll = new HashSet<>();
 
     /**
-     * dllをシステムプロパティに追加する <br/>
-     * jar化することも考慮するため、dllを一端外のtmpファイルに保存してから追加している。<br/>
+     * dllをシステムプロパティに追加する <br>
+     * jar化することも考慮するため、dllを一端外のtmpファイルに保存してから追加している。<br>
      * リソースフォルダにdllは入れてね☆
      * @param filepath リソースフォルダより下のパス(/resource/a/test.dllならa/test.dll)
      * @return 追加したtmpファイルの絶対パス
@@ -68,7 +68,7 @@ public class LoadDll {
     }
 
     /**
-     * dllファイルからInterfaceの実装オブジェクトをロードする。<br/>
+     * dllファイルからInterfaceの実装オブジェクトをロードする。<br>
      * 内部で {@link LoadDll#setDll(String)}を呼ぶので、他でシステムプロパティに追加するのはやめてね☆
      * @param filename dllファイルのリソースフォルダより下のパス(/resource/a/test.dllならa/test.dll)
      * @param clazz 生成したいInterfaceのクラス(jextract等で生成したやつ)
