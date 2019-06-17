@@ -8,15 +8,11 @@ Windowsに限って[jnr-ffi](https://github.com/jnr/jnr-ffi)を少しだけ使�
 
 [bintray](https://bintray.com/)に公開しました。
 
-```groovy:build.gradle
-repositories {
-    maven {
-        url 'https://dl.bintray.com/javakky/maven'
-    }
-}
++ [javakky / maven / com.github.javakky.jnr-load-dill](https://bintray.com/javakky/maven/com.github.javakky.jnr-load-dill)
 
+```groovy:build.gradle
 dependencies{
-    compile group: 'com.github.javakky', name: 'jnr-load-dill', version: '1.0.1'
+    compile 'com.github.javakky:jnr-load-dill:1.0.2'
 }
 ```
 
